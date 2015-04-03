@@ -1,0 +1,169 @@
+<form>
+  <fieldset>
+    <legend>Backend Setup</legend>
+    <div class="form-field">
+      {{ widget.client_urn.id_hidden_field }}
+      <label for="{{ widget.client_urn.value_field_id }}">
+        Client URN
+      </label>
+      <input type="text"
+        placeholder="g5-sh-4neb3ck3r-isatool"
+        id="{{ widget.client_urn.value_field_id }}"
+        name="{{ widget.client_urn.value_field_name }}"
+        value="{{ widget.client_urn.best_value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.search_results_page.id_hidden_field }}
+      <label for="{{ widget.search_results_page.value_field_id }}">
+        Search Results Page Path
+      </label>
+      <input type="text"
+        placeholder="Results render inline if blank"
+        id="{{ widget.search_results_page.value_field_id }}"
+        name="{{ widget.search_results_page.value_field_name }}"
+        value="{{ widget.search_results_page.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.service_url.id_hidden_field }}
+      <label for="{{ widget.service_url.value_field_id }}">
+        Search Service Domain
+      </label>
+      <input type="text"
+        placeholder="Defaults to //g5-hub.herokuapp.com if blank"
+        id="{{ widget.service_url.value_field_id }}"
+        name="{{ widget.service_url.value_field_name }}"
+        value="{{ widget.service_url.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.phone_service_url.id_hidden_field }}
+      <label for="{{ widget.phone_service_url.value_field_id }}">
+        Phone Service Domain
+      </label>
+      <input type="text"
+        placeholder="Populate to display call tracking numbers"
+        id="{{ widget.phone_service_url.value_field_id }}"
+        name="{{ widget.phone_service_url.value_field_name }}"
+        value="{{ widget.phone_service_url.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.search_radius.id_hidden_field }}
+      <label for="{{ widget.search_radius.value_field_id }}">
+        Search Radius
+      </label>
+      <input type="text"
+        placeholder="Defaults to 20 if blank"
+        id="{{ widget.search_radius.value_field_id }}"
+        name="{{ widget.search_radius.value_field_name }}"
+        value="{{ widget.search_radius.value }}"
+      />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Form Text and Colors</legend>
+
+    <div class="form-field">
+      {{ widget.form_background_color.id_hidden_field }}
+      <label for="{{ widget.form_background_color.value_field_id }}">
+        Form Background Color
+      </label>
+      <input type="text"
+        placeholder="Form Background"
+        id="{{ widget.form_background_color.value_field_id }}"
+        name="{{ widget.form_background_color.value_field_name }}"
+        value="{{ widget.form_background_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.form_text_color.id_hidden_field }}
+      <label for="{{ widget.form_text_color.value_field_id }}">
+        Form Text Color
+      </label>
+      <input type="text"
+        placeholder="Defaults to #ffffff"
+        id="{{ widget.form_text_color.value_field_id }}"
+        name="{{ widget.form_text_color.value_field_name }}"
+        value="{{ widget.form_text_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.form_button_color.id_hidden_field }}
+      <label for="{{ widget.form_button_color.value_field_id }}">
+        Form Button Color
+      </label>
+      <input type="text"
+        placeholder="Defaults to #000000"
+        id="{{ widget.form_button_color.value_field_id }}"
+        name="{{ widget.form_button_color.value_field_name }}"
+        value="{{ widget.form_button_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.form_text.id_hidden_field }}
+      <label for="{{ widget.form_text.value_field_id }}">
+        Form Text
+      </label>
+      <input type="text"
+        placeholder="Defaults to: Find a Location"
+        id="{{ widget.form_text.value_field_id }}"
+        name="{{ widget.form_text.value_field_name }}"
+        value="{{ widget.form_text.value }}"
+      />
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Result List Colors</legend>
+
+    <div class="form-field">
+      {{ widget.result_background_color.id_hidden_field }}
+      <label for="{{ widget.result_background_color.value_field_id }}">
+        Results Background Color
+      </label>
+      <input type="text"
+        placeholder="Defaults to #ffffff"
+        id="{{ widget.result_background_color.value_field_id }}"
+        name="{{ widget.result_background_color.value_field_name }}"
+        value="{{ widget.result_background_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.result_text_color.id_hidden_field }}
+      <label for="{{ widget.result_text_color.value_field_id }}">
+        Results Text Color
+      </label>
+      <input type="text"
+        placeholder="Controls address and phone number"
+        id="{{ widget.result_text_color.value_field_id }}"
+        name="{{ widget.result_text_color.value_field_name }}"
+        value="{{ widget.result_text_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.result_button_color.id_hidden_field }}
+      <label for="{{ widget.result_button_color.value_field_id }}">
+        Result Button Color
+      </label>
+      <input type="text"
+        placeholder="Also controls color of branded name"
+        id="{{ widget.result_button_color.value_field_id }}"
+        name="{{ widget.result_button_color.value_field_name }}"
+        value="{{ widget.result_button_color.value }}"
+      />
+    </div>
+  </fieldset>
+  <input type="submit" value="Save" class="btn" />
+</form>

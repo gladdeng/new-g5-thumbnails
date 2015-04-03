@@ -1,0 +1,99 @@
+<form>
+  <div class="form-field">
+    {{ widget.floorplan_data_feed.id_hidden_field }}
+    <label for="{{ widget.floorplan_data_feed.value_field_id }}">
+      Floorplan Data Feed
+    </label>
+    <input type="text"
+      placeholder="Data URL"
+      id="{{ widget.floorplan_data_feed.value_field_id }}"
+      name="{{ widget.floorplan_data_feed.value_field_name }}"
+      value="{{ widget.floorplan_data_feed.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.header_text.id_hidden_field }}
+    <label for="{{ widget.header_text.value_field_id }}">
+      Header Text
+    </label>
+    <input type="text"
+      placeholder="client urn"
+      id="{{ widget.header_text.value_field_id }}"
+      name="{{ widget.header_text.value_field_name }}"
+      value="{{ widget.header_text.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_text.id_hidden_field }}
+    <label for="{{ widget.cta_text.value_field_id }}">
+      CTA Text
+    </label>
+    <input type="text"
+      placeholder="Contact Us"
+      id="{{ widget.cta_text.value_field_id }}"
+      name="{{ widget.cta_text.value_field_name }}"
+      value="{{ widget.cta_text.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.heading_color.id_hidden_field }}
+    <label for="{{ widget.heading_color.value_field_id }}">
+      Heading Color
+    </label>
+    <input type="text"
+      placeholder="#252b32"
+      id="{{ widget.heading_color.value_field_id }}"
+      name="{{ widget.heading_color.value_field_name }}"
+      value="{{ widget.heading_color.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_color.id_hidden_field }}
+    <label for="{{ widget.cta_color.value_field_id }}">
+      CTA Color
+    </label>
+    <input type="text"
+      placeholder="#005892"
+      id="{{ widget.cta_color.value_field_id }}"
+      name="{{ widget.cta_color.value_field_name }}"
+      value="{{ widget.cta_color.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.accent_color_1.id_hidden_field }}
+    <label for="{{ widget.accent_color_1.value_field_id }}">
+      Accent Color 1
+    </label>
+    <input type="text"
+      placeholder="#fe7b6f"
+      id="{{ widget.accent_color_1.value_field_id }}"
+      name="{{ widget.accent_color_1.value_field_name }}"
+      value="{{ widget.accent_color_1.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.accent_color_2.id_hidden_field }}
+    <label for="{{ widget.accent_color_2.value_field_id }}">
+      Accent Color 2
+    </label>
+    <input type="text"
+      placeholder="#526173"
+      id="{{ widget.accent_color_2.value_field_id }}"
+      name="{{ widget.accent_color_2.value_field_name }}"
+      value="{{ widget.accent_color_2.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.text_color.id_hidden_field }}
+    <label for="{{ widget.text_color.value_field_id }}">
+      Text Color
+    </label>
+    <input type="text"
+      placeholder="#000000"
+      id="{{ widget.text_color.value_field_id }}"
+      name="{{ widget.text_color.value_field_name }}"
+      value="{{ widget.text_color.value }}"
+    />
+  </div>
+  <input type="submit" value="Save" class="btn" />
+</form>

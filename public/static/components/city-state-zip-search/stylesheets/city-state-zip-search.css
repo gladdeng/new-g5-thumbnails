@@ -1,0 +1,125 @@
+.city-state-zip-search {
+  width:100%;
+  position:relative;
+}
+
+
+/* SEARCH FORM */
+/*************************************/
+.zip-search-top{
+  float:right;
+  position:relative;
+  background:#1772a2;
+  padding:10px 10px 15px 10px;
+  margin-bottom:10px;
+}
+
+.mini-version .zip-search-top{
+  float:none;
+  overflow:auto;
+  margin:10px auto;
+  max-width:400px;
+}
+
+.zip-search-heading{
+  color:#f3f3f3;
+  font-size:22px;
+  padding:0 0 10px 0;
+
+}
+
+.zip-search-button,
+.zip-search-input{
+  display:block;
+  position:relative;
+  float:left;
+  margin:0;
+  padding:5px;
+}
+
+.zip-search-button{ width:15%; background:#000000; }
+.zip-search-input{ width:85%; background:#ffffff; }
+
+.city-state-zip-search input,
+.city-state-zip-search button{
+  display:inline-block;
+  padding:5px;
+  margin:0;
+  border:none;
+  width:100%;
+  background:transparent;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.city-state-zip-search button{
+  color:#f3f3f3;
+  border:none;
+  padding:5px 0;
+}
+
+
+/* SEARCH RESULTS */
+/*************************************/
+.zip-search-results{ float:left; }
+
+.zip-search-location{
+  padding:10px;
+  margin:10px;
+  box-shadow:1px 1px 2px 1px #ccc;
+  background:#fff;
+}
+
+.zip-search-location .location-address { padding-left:25%; }
+
+.zip-search-location img{
+  float:left;
+  width:20%;
+  margin:0 0 10px 0;
+}
+
+.zip-search-location span{ display:block; }
+
+.zip-search-location .branded-name,
+.zip-search-location .phone{ font-weight:bold; }
+
+.zip-search-location-link,
+.view-all-link{
+  display:block;
+  background:#1772a2;
+  color:#f3f3f3;
+  padding:5px;
+  text-align:center;
+  margin-top: 10px;
+  clear:both;
+}
+
+.view-all-link{ margin:30px 20px; font-size:22px; }
+
+
+/* GOOGLE MAP */
+/*************************************/
+.zip-search-map{
+  height:400px;
+  float:right;
+}
+
+div.location-search-info-window{ color: #000; }
+
+/* UnHack max width so controls work on google maps */
+.zip-search-map img {
+  max-width: none;
+}
+
+
+/* PSEUDO MEDIA QUERIES */
+/*************************************/
+/*.narrow */.zip-search-top{ width:100%; }
+.wide .zip-search-top{ width:43%; }
+
+/*.narrow */.zip-search-results{ width:100%; }
+.wide .zip-search-results{ width:55%; }
+
+/*.narrow */.zip-search-map{ width:86%; float:none; margin:0 auto; }
+.wide .zip-search-map{ width:43%; margin: 3.5em 0 0; float:right; }

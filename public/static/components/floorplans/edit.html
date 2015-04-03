@@ -1,0 +1,26 @@
+<form>
+  <div class="form-field">
+    {{ widget.client_urn.id_hidden_field }}
+    <label for="{{ widget.client_urn.value_field_id }}" >
+      Client URN
+    </label>
+    <input type="text"
+      id="{{ widget.client_urn.value_field_id }}"
+      name="{{ widget.client_urn.value_field_name }}"
+      value="{{ widget.client_urn.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.location_urn.id_hidden_field }}
+    <label for="{{ widget.location_urn.value_field_id }}" >
+      Location URN
+    </label>
+    <input type="text"
+      id="{{ widget.location_urn.value_field_id }}"
+      name="{{ widget.location_urn.value_field_name }}"
+      value="{{ widget.location_urn.value }}"
+    />
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+</form>

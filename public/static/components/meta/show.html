@@ -1,0 +1,13 @@
+<meta name="keywords" content="" />
+{% if widget.google_site_verification.value != blank %}
+  <meta name='google-site-verification' content="{{ widget.google_site_verification.value }}" />
+{% endif %}
+{% if widget.google_plus_id.value != blank %}
+  <link href="https://plus.google.com/{{ widget.google_plus_id.value }}" rel="publisher" />
+{% endif %}
+{% if widget.optimizely_id.value and widget.optimizely_id.value != blank %}
+  <script type="text/javascript" src="//cdn.optimizely.com/js/{{ widget.optimizely_id.value }}.js"></script>
+{% endif %}
+{% if widget.favicon.best_value != blank %}
+  <link rel="shortcut icon" href="{{ widget.favicon.best_value }}" />
+{% endif %}

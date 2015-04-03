@@ -1,0 +1,117 @@
+<form>
+  <div class="form-field check-field">
+    {{ widget.display_navigation.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.display_navigation.value_field_id }}_false"
+      name="{{ widget.display_navigation.value_field_name }}"
+      value="false"
+    />
+    <input type="checkbox"
+      class="display-navigation"
+      id="{{ widget.display_navigation.value_field_id }}"
+      name="{{ widget.display_navigation.value_field_name }}"
+      value="true"
+      {% if widget.display_navigation.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.display_navigation.value_field_id }}" >
+      Display Navigation
+    </label>
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.display_corporate_navigation.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.display_corporate_navigation.value_field_id }}_false"
+      name="{{ widget.display_corporate_navigation.value_field_name }}"
+      value="false"
+    />
+    <input type="checkbox"
+      class="display-corporate-navigation"
+      id="{{ widget.display_corporate_navigation.value_field_id }}"
+      name="{{ widget.display_corporate_navigation.value_field_name }}"
+      value="true"
+      {% if widget.display_corporate_navigation.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.display_corporate_navigation.value_field_id }}" >
+      Display Corporate Navigation
+    </label>
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.display_as_calls_to_action.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.display_as_calls_to_action.value_field_id }}_false"
+      name="{{ widget.display_as_calls_to_action.value_field_name }}"
+      value="false"
+    />
+    <input type="checkbox"
+      id="{{ widget.display_as_calls_to_action.value_field_id }}"
+      name="{{ widget.display_as_calls_to_action.value_field_name }}"
+      value="true"
+      {% if widget.display_as_calls_to_action.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.display_as_calls_to_action.value_field_id }}" >
+      Display As Calls To Action
+    </label>
+  </div>
+
+
+  <fieldset>
+    <legend>Choose which links you would like to display</legend>
+    <div>
+      {{ widget.navigation.id_hidden_field }}
+      <ul>
+        {% for web_page in widget.navigation.value %}
+          <li class="field check-field">
+            <input type="hidden"
+              id="{{ widget.navigation.value_field_id }}_{{ web_page[0] }}_display_false"
+              name="{{ widget.navigation.value_field_name }}[{{ web_page[0] }}][display]"
+              value="false"
+            />
+            <input type="checkbox"
+              id="{{ widget.navigation.value_field_id }}_{{ web_page[0] }}_display"
+              name="{{ widget.navigation.value_field_name }}[{{ web_page[0] }}][display]"
+              value="true"
+              {% if web_page[1].display != "false" %}
+              checked="checked"
+              {% endif %}
+            />
+            <label for="{{ widget.navigation.value_field_id }}_{{ web_page[0] }}_display">
+              {{ web_page[1].name }}
+            </label>
+          </li>
+          {% for sub_page in web_page[1].child_templates %}
+            <li class="field check-field">
+              - 
+              <input type="hidden"
+                    id="{{ widget.navigation.value_field_id }}_{{ web_page[0] }}_child_templates_{{sub_page[0]}}_display_false"
+                  name="{{ widget.navigation.value_field_name }}[{{ web_page[0] }}][child_templates][{{sub_page[0]}}][display]"
+                value="false"
+              />
+              <input type="checkbox"
+                  id="{{ widget.navigation.value_field_id }}_{{ web_page[0] }}_child_templates_{{sub_page[0]}}_display"
+                name="{{ widget.navigation.value_field_name }}[{{web_page[0]}}][child_templates][{{ sub_page[0] }}][display]"
+                value="true"
+                {% if sub_page[1].display != "false" %}
+                checked="checked"
+                {% endif %}
+              />
+              <label for="{{ widget.navigation.value_field_id }}_{{web_page[0]}}_child_templates_{{ sub_page[0] }}_display">
+                {{ sub_page[1].name }}
+              </label>
+            </li>
+
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  </fieldset>
+  <input type="submit" value="Save" class="btn" />
+</form>
+

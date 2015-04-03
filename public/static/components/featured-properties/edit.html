@@ -1,0 +1,1063 @@
+<form>
+  <div class="form-field">
+    {{ widget.gallery_title.id_hidden_field }}
+    <label for="{{ widget.gallery_title.value_field_id }}" >
+      Gallery Title
+    </label>
+    <input type="text"
+      id="{{ widget.gallery_title.value_field_id }}"
+      name="{{ widget.gallery_title.value_field_name }}"
+      value="{{ widget.gallery_title.value }}"
+    />
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.gallery_thumbnails.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.gallery_thumbnails.value_field_id }}_false"
+      name="{{ widget.gallery_thumbnails.value_field_name }}"
+      value="no"
+    />
+    <input type="checkbox"
+      class="display-navigation"
+      id="{{ widget.gallery_thumbnails.value_field_id }}"
+      name="{{ widget.gallery_thumbnails.value_field_name }}"
+      value="yes"
+      {% if widget.gallery_thumbnails.value == "yes" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.gallery_thumbnails.value_field_id }}" >
+      Show Thumbnails
+    </label>
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.gallery_mini.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.gallery_mini.value_field_id }}_false"
+      name="{{ widget.gallery_mini.value_field_name }}"
+      value="no"
+    />
+    <input type="checkbox"
+      class="display-navigation"
+      id="{{ widget.gallery_mini.value_field_id }}"
+      name="{{ widget.gallery_mini.value_field_name }}"
+      value="yes"
+      {% if widget.gallery_mini.value == "yes" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.gallery_mini.value_field_id }}" >
+      Mini Gallery
+    </label>
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.gallery_carousel.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.gallery_carousel.value_field_id }}_false"
+      name="{{ widget.gallery_carousel.value_field_name }}"
+      value="no"
+    />
+    <input type="checkbox"
+      class="display-navigation"
+      id="{{ widget.gallery_carousel.value_field_id }}"
+      name="{{ widget.gallery_carousel.value_field_name }}"
+      value="yes"
+      {% if widget.gallery_carousel.value == "yes" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.gallery_carousel.value_field_id }}" >
+      Carousel
+    </label>
+  </div>
+
+  <p class="note">To remove photos, simply delete the URL and Caption</p>
+
+  <div class="photo-fields">
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo1_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo1_url.value_field_id }}" >
+          Photo 1 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo1_url.value_field_id }}"
+          name="{{ widget.gallery_photo1_url.value_field_name }}"
+          value="{{ widget.gallery_photo1_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo1_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo1_alt_tag.value_field_id }}" >
+          Photo 1 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo1_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo1_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo1_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo1_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo1_link.value_field_id }}" >
+          Photo 1 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo1_link.value_field_id }}"
+          name="{{ widget.gallery_photo1_link.value_field_name }}"
+          value="{{ widget.gallery_photo1_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo1_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo1_caption.value_field_id }}" >
+          Photo 1 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo1_caption.value_field_id }}"
+          name="{{ widget.gallery_photo1_caption.value_field_name }}"
+        >{{ widget.gallery_photo1_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo2_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo2_url.value_field_id }}" >
+          Photo 2 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo2_url.value_field_id }}"
+          name="{{ widget.gallery_photo2_url.value_field_name }}"
+          value="{{ widget.gallery_photo2_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo2_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo2_alt_tag.value_field_id }}" >
+          Photo 2 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo2_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo2_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo2_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo2_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo2_link.value_field_id }}" >
+          Photo 2 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo2_link.value_field_id }}"
+          name="{{ widget.gallery_photo2_link.value_field_name }}"
+          value="{{ widget.gallery_photo2_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo2_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo2_caption.value_field_id }}" >
+          Photo 2 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo2_caption.value_field_id }}"
+          name="{{ widget.gallery_photo2_caption.value_field_name }}"
+        >{{ widget.gallery_photo2_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo3_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo3_url.value_field_id }}" >
+          Photo 3 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo3_url.value_field_id }}"
+          name="{{ widget.gallery_photo3_url.value_field_name }}"
+          value="{{ widget.gallery_photo3_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo3_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo3_alt_tag.value_field_id }}" >
+          Photo 3 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo3_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo3_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo3_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo3_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo3_link.value_field_id }}" >
+          Photo 3 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo3_link.value_field_id }}"
+          name="{{ widget.gallery_photo3_link.value_field_name }}"
+          value="{{ widget.gallery_photo3_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo3_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo3_caption.value_field_id }}" >
+          Photo 3 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo3_caption.value_field_id }}"
+          name="{{ widget.gallery_photo3_caption.value_field_name }}"
+        >{{ widget.gallery_photo3_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo4_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo4_url.value_field_id }}" >
+          Photo 4 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo4_url.value_field_id }}"
+          name="{{ widget.gallery_photo4_url.value_field_name }}"
+          value="{{ widget.gallery_photo4_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo4_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo4_alt_tag.value_field_id }}" >
+          Photo 4 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo4_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo4_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo4_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo4_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo4_link.value_field_id }}" >
+          Photo 4 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo4_link.value_field_id }}"
+          name="{{ widget.gallery_photo4_link.value_field_name }}"
+          value="{{ widget.gallery_photo4_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo4_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo4_caption.value_field_id }}" >
+          Photo 4 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo4_caption.value_field_id }}"
+          name="{{ widget.gallery_photo4_caption.value_field_name }}"
+        >{{ widget.gallery_photo4_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo5_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo5_url.value_field_id }}" >
+          Photo 5 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo5_url.value_field_id }}"
+          name="{{ widget.gallery_photo5_url.value_field_name }}"
+          value="{{ widget.gallery_photo5_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo5_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo5_alt_tag.value_field_id }}" >
+          Photo 5 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo5_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo5_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo5_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo5_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo5_link.value_field_id }}" >
+          Photo 5 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo5_link.value_field_id }}"
+          name="{{ widget.gallery_photo5_link.value_field_name }}"
+          value="{{ widget.gallery_photo5_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo5_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo5_caption.value_field_id }}" >
+          Photo 5 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo5_caption.value_field_id }}"
+          name="{{ widget.gallery_photo5_caption.value_field_name }}"
+        >{{ widget.gallery_photo5_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo6_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo6_url.value_field_id }}" >
+          Photo 6 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo6_url.value_field_id }}"
+          name="{{ widget.gallery_photo6_url.value_field_name }}"
+          value="{{ widget.gallery_photo6_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo6_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo6_alt_tag.value_field_id }}" >
+          Photo 6 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo6_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo6_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo6_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo6_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo6_link.value_field_id }}" >
+          Photo 6 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo6_link.value_field_id }}"
+          name="{{ widget.gallery_photo6_link.value_field_name }}"
+          value="{{ widget.gallery_photo6_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo6_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo6_caption.value_field_id }}" >
+          Photo 6 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo6_caption.value_field_id }}"
+          name="{{ widget.gallery_photo6_caption.value_field_name }}"
+        >{{ widget.gallery_photo6_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo7_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo7_url.value_field_id }}" >
+          Photo 7 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo7_url.value_field_id }}"
+          name="{{ widget.gallery_photo7_url.value_field_name }}"
+          value="{{ widget.gallery_photo7_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo7_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo7_alt_tag.value_field_id }}" >
+          Photo 7 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo7_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo7_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo7_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo7_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo7_link.value_field_id }}" >
+          Photo 7 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo7_link.value_field_id }}"
+          name="{{ widget.gallery_photo7_link.value_field_name }}"
+          value="{{ widget.gallery_photo7_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo7_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo7_caption.value_field_id }}" >
+          Photo 7 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo7_caption.value_field_id }}"
+          name="{{ widget.gallery_photo7_caption.value_field_name }}"
+        >{{ widget.gallery_photo7_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo8_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo8_url.value_field_id }}" >
+          Photo 8 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo8_url.value_field_id }}"
+          name="{{ widget.gallery_photo8_url.value_field_name }}"
+          value="{{ widget.gallery_photo8_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo8_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo8_alt_tag.value_field_id }}" >
+          Photo 8 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo8_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo8_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo8_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo8_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo8_link.value_field_id }}" >
+          Photo 8 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo8_link.value_field_id }}"
+          name="{{ widget.gallery_photo8_link.value_field_name }}"
+          value="{{ widget.gallery_photo8_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo8_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo8_caption.value_field_id }}" >
+          Photo 8 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo8_caption.value_field_id }}"
+          name="{{ widget.gallery_photo8_caption.value_field_name }}"
+        >{{ widget.gallery_photo8_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo9_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo9_url.value_field_id }}" >
+          Photo 9 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo9_url.value_field_id }}"
+          name="{{ widget.gallery_photo9_url.value_field_name }}"
+          value="{{ widget.gallery_photo9_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo9_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo9_alt_tag.value_field_id }}" >
+          Photo 9 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo9_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo9_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo9_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo9_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo9_link.value_field_id }}" >
+          Photo 9 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo9_link.value_field_id }}"
+          name="{{ widget.gallery_photo9_link.value_field_name }}"
+          value="{{ widget.gallery_photo9_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo9_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo9_caption.value_field_id }}" >
+          Photo 9 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo9_caption.value_field_id }}"
+          name="{{ widget.gallery_photo9_caption.value_field_name }}"
+        >{{ widget.gallery_photo9_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo10_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo10_url.value_field_id }}" >
+          Photo 10 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo10_url.value_field_id }}"
+          name="{{ widget.gallery_photo10_url.value_field_name }}"
+          value="{{ widget.gallery_photo10_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo10_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo10_alt_tag.value_field_id }}" >
+          Photo 10 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo10_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo10_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo10_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo10_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo10_link.value_field_id }}" >
+          Photo 10 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo10_link.value_field_id }}"
+          name="{{ widget.gallery_photo10_link.value_field_name }}"
+          value="{{ widget.gallery_photo10_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo10_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo10_caption.value_field_id }}" >
+          Photo 10 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo10_caption.value_field_id }}"
+          name="{{ widget.gallery_photo10_caption.value_field_name }}"
+        >{{ widget.gallery_photo10_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo11_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo11_url.value_field_id }}" >
+          Photo 11 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo11_url.value_field_id }}"
+          name="{{ widget.gallery_photo11_url.value_field_name }}"
+          value="{{ widget.gallery_photo11_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo11_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo11_alt_tag.value_field_id }}" >
+          Photo 11 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo11_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo11_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo11_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo11_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo11_link.value_field_id }}" >
+          Photo 11 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo11_link.value_field_id }}"
+          name="{{ widget.gallery_photo11_link.value_field_name }}"
+          value="{{ widget.gallery_photo11_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo11_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo11_caption.value_field_id }}" >
+          Photo 11 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo11_caption.value_field_id }}"
+          name="{{ widget.gallery_photo11_caption.value_field_name }}"
+        >{{ widget.gallery_photo11_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo12_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo12_url.value_field_id }}" >
+          Photo 12 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo12_url.value_field_id }}"
+          name="{{ widget.gallery_photo12_url.value_field_name }}"
+          value="{{ widget.gallery_photo12_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo12_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo12_alt_tag.value_field_id }}" >
+          Photo 12 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo12_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo12_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo12_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo12_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo12_link.value_field_id }}" >
+          Photo 12 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo12_link.value_field_id }}"
+          name="{{ widget.gallery_photo12_link.value_field_name }}"
+          value="{{ widget.gallery_photo12_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo12_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo12_caption.value_field_id }}" >
+          Photo 12 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo12_caption.value_field_id }}"
+          name="{{ widget.gallery_photo12_caption.value_field_name }}"
+        >{{ widget.gallery_photo12_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo13_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo13_url.value_field_id }}" >
+          Photo 13 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo13_url.value_field_id }}"
+          name="{{ widget.gallery_photo13_url.value_field_name }}"
+          value="{{ widget.gallery_photo13_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo13_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo13_alt_tag.value_field_id }}" >
+          Photo 13 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo13_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo13_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo13_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo13_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo13_link.value_field_id }}" >
+          Photo 13 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo13_link.value_field_id }}"
+          name="{{ widget.gallery_photo13_link.value_field_name }}"
+          value="{{ widget.gallery_photo13_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo13_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo13_caption.value_field_id }}" >
+          Photo 13 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo13_caption.value_field_id }}"
+          name="{{ widget.gallery_photo13_caption.value_field_name }}"
+        >{{ widget.gallery_photo13_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo14_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo14_url.value_field_id }}" >
+          Photo 14 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo14_url.value_field_id }}"
+          name="{{ widget.gallery_photo14_url.value_field_name }}"
+          value="{{ widget.gallery_photo14_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo14_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo14_alt_tag.value_field_id }}" >
+          Photo 14 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo14_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo14_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo14_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo14_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo14_link.value_field_id }}" >
+          Photo 14 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo14_link.value_field_id }}"
+          name="{{ widget.gallery_photo14_link.value_field_name }}"
+          value="{{ widget.gallery_photo14_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo14_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo14_caption.value_field_id }}" >
+          Photo 14 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo14_caption.value_field_id }}"
+          name="{{ widget.gallery_photo14_caption.value_field_name }}"
+        >{{ widget.gallery_photo14_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo15_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo15_url.value_field_id }}" >
+          Photo 15 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo15_url.value_field_id }}"
+          name="{{ widget.gallery_photo15_url.value_field_name }}"
+          value="{{ widget.gallery_photo15_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo15_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo15_alt_tag.value_field_id }}" >
+          Photo 15 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo15_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo15_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo15_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo15_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo15_link.value_field_id }}" >
+          Photo 15 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo15_link.value_field_id }}"
+          name="{{ widget.gallery_photo15_link.value_field_name }}"
+          value="{{ widget.gallery_photo15_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo15_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo15_caption.value_field_id }}" >
+          Photo 15 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo15_caption.value_field_id }}"
+          name="{{ widget.gallery_photo15_caption.value_field_name }}"
+        >{{ widget.gallery_photo15_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo16_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo16_url.value_field_id }}" >
+          Photo 16 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo16_url.value_field_id }}"
+          name="{{ widget.gallery_photo16_url.value_field_name }}"
+          value="{{ widget.gallery_photo16_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo16_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo16_alt_tag.value_field_id }}" >
+          Photo 16 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo16_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo16_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo16_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo16_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo16_link.value_field_id }}" >
+          Photo 16 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo16_link.value_field_id }}"
+          name="{{ widget.gallery_photo16_link.value_field_name }}"
+          value="{{ widget.gallery_photo16_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo16_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo16_caption.value_field_id }}" >
+          Photo 16 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo16_caption.value_field_id }}"
+          name="{{ widget.gallery_photo16_caption.value_field_name }}"
+        >{{ widget.gallery_photo16_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo17_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo17_url.value_field_id }}" >
+          Photo 17 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo17_url.value_field_id }}"
+          name="{{ widget.gallery_photo17_url.value_field_name }}"
+          value="{{ widget.gallery_photo17_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo17_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo17_alt_tag.value_field_id }}" >
+          Photo 17 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo17_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo17_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo17_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo17_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo17_link.value_field_id }}" >
+          Photo 17 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo17_link.value_field_id }}"
+          name="{{ widget.gallery_photo17_link.value_field_name }}"
+          value="{{ widget.gallery_photo17_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo17_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo17_caption.value_field_id }}" >
+          Photo 17 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo17_caption.value_field_id }}"
+          name="{{ widget.gallery_photo17_caption.value_field_name }}"
+        >{{ widget.gallery_photo17_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo18_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo18_url.value_field_id }}" >
+          Photo 18 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo18_url.value_field_id }}"
+          name="{{ widget.gallery_photo18_url.value_field_name }}"
+          value="{{ widget.gallery_photo18_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo18_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo18_alt_tag.value_field_id }}" >
+          Photo 18 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo18_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo18_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo18_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo18_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo18_link.value_field_id }}" >
+          Photo 18 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo18_link.value_field_id }}"
+          name="{{ widget.gallery_photo18_link.value_field_name }}"
+          value="{{ widget.gallery_photo18_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo18_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo18_caption.value_field_id }}" >
+          Photo 18 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo18_caption.value_field_id }}"
+          name="{{ widget.gallery_photo18_caption.value_field_name }}"
+        >{{ widget.gallery_photo18_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo19_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo19_url.value_field_id }}" >
+          Photo 19 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo19_url.value_field_id }}"
+          name="{{ widget.gallery_photo19_url.value_field_name }}"
+          value="{{ widget.gallery_photo19_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo19_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo19_alt_tag.value_field_id }}" >
+          Photo 19 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo19_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo19_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo19_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo19_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo19_link.value_field_id }}" >
+          Photo 19 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo19_link.value_field_id }}"
+          name="{{ widget.gallery_photo19_link.value_field_name }}"
+          value="{{ widget.gallery_photo19_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo19_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo19_caption.value_field_id }}" >
+          Photo 19 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo19_caption.value_field_id }}"
+          name="{{ widget.gallery_photo19_caption.value_field_name }}"
+        >{{ widget.gallery_photo19_caption.value }}</textarea>
+      </div>
+    </div>
+
+    <div class="photo-field">
+      <div class="form-field">
+        {{ widget.gallery_photo20_url.id_hidden_field }}
+        <label for="{{ widget.gallery_photo20_url.value_field_id }}" >
+          Photo 20 URL
+        </label>
+        <input type="url"
+          id="{{ widget.gallery_photo20_url.value_field_id }}"
+          name="{{ widget.gallery_photo20_url.value_field_name }}"
+          value="{{ widget.gallery_photo20_url.value | url_encode }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo20_alt_tag.id_hidden_field }}
+        <label for="{{ widget.gallery_photo20_alt_tag.value_field_id }}" >
+          Photo 20 Alt Tag
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo20_alt_tag.value_field_id }}"
+          name="{{ widget.gallery_photo20_alt_tag.value_field_name }}"
+          value="{{ widget.gallery_photo20_alt_tag.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo20_link.id_hidden_field }}
+        <label for="{{ widget.gallery_photo20_link.value_field_id }}" >
+          Photo 20 link
+        </label>
+        <input type="text"
+          id="{{ widget.gallery_photo20_link.value_field_id }}"
+          name="{{ widget.gallery_photo20_link.value_field_name }}"
+          value="{{ widget.gallery_photo20_link.value }}"
+        />
+      </div>
+
+      <div class="form-field">
+        {{ widget.gallery_photo20_caption.id_hidden_field }}
+        <label for="{{ widget.gallery_photo20_caption.value_field_id }}" >
+          Photo 20 Caption
+        </label>
+        <textarea
+          id="{{ widget.gallery_photo20_caption.value_field_id }}"
+          name="{{ widget.gallery_photo20_caption.value_field_name }}"
+        >{{ widget.gallery_photo20_caption.value }}</textarea>
+      </div>
+    </div>
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+</form>

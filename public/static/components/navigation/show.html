@@ -1,0 +1,62 @@
+{% if widget.display_corporate_navigation.value == "true" %}
+  {% if widget.display_navigation.value == "true" %}
+  <nav class="corporate-navigation widget show-desktop">
+  {% else %}
+  <nav class="corporate-navigation widget">
+  {% endif %}
+    <ul class="top-nav">
+      {% for web_page in widget.corporate_navigation %}
+        {% if web_page[1].display != "false" and web_page[1].child_template? == false %}
+        <li {% if web_page[1].child_templates != blank %}class="has-subnav"{% endif %}>
+          <a href="{{ web_page[1].url | url_encode }}">{{ web_page[1].name }}</a>
+          {% if web_page[1].child_templates != blank %}
+            <ul class="subnav">
+              {% for child_page in web_page[1].child_templates %}
+                {% if forloop.first %}
+                  <li><a href="{{ web_page[1].url | url_encode }}">{{ web_page[1].name }}</a></li>
+                {% endif %}
+                <li><a href="{{ child_page[1].url | url_encode }}">{{ child_page[1].name }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
+
+{% if widget.display_navigation.value == "true" %}
+  {% if widget.display_as_calls_to_action.value == "true" %}
+  <nav class="action-calls widget">
+  {% else %}
+  <nav class="navigation widget">
+  {% endif %}
+    <ul class="top-nav">
+      {% for web_page in widget.navigation.value %}
+        {% if web_page[1].display != "false" and web_page[1].child_template? == false %}
+        <li {% if web_page[1].sub_nav %}class="has-subnav"{% endif %}>
+          <a href="{{ web_page[1].url | url_encode }}">{{ web_page[1].name }}</a>
+          {% if web_page[1].child_templates != blank %}
+            <ul class="subnav">
+              {% for child_page in web_page[1].child_templates %}
+                {% if forloop.first %}
+                  <li><a href="{{ web_page[1].url | url_encode }}">{{ web_page[1].name }}</a></li>
+                {% endif %}
+                {% if child_page[1].display != "false" %}
+                  <li><a href="{{ child_page[1].url | url_encode }}">{{ child_page[1].name }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+      {% if widget.display_as_calls_to_action.value != "true" and widget.display_corporate_navigation.value == "true" %}
+        <li class="corporate-home">
+          <a href="/">Corporate Home</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

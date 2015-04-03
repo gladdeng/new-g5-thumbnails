@@ -1,0 +1,39 @@
+<form>
+  <div class="form-field">
+    {{ widget.core_store_id.id_hidden_field }}
+    <label for="{{ widget.core_store_id.value_field_id }}">
+      Core Store ID
+    </label>
+    <input type="text"
+      placeholder="1234"
+      id="{{ widget.core_store_id.value_field_id }}"
+      name="{{ widget.core_store_id.value_field_name }}"
+      value="{{ widget.core_store_id.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.floorplans_service_host.id_hidden_field }}
+    <label for="{{ widget.floorplans_service_host.value_field_id }}">
+      Floorplans Service Host
+    </label>
+    <input type="text"
+      placeholder="//www.g5api.com"
+      id="{{ widget.floorplans_service_host.value_field_id }}"
+      name="{{ widget.floorplans_service_host.value_field_name }}"
+      value="{{ widget.floorplans_service_host.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.floorplan_page_url.id_hidden_field }}
+    <label for="{{ widget.floorplan_page_url.value_field_id }}">
+      Floorplans Page Url
+    </label>
+    <input type="text"
+      placeholder="/apartments/state/city/floor-plans"
+      id="{{ widget.floorplan_page_url.value_field_id }}"
+      name="{{ widget.floorplan_page_url.value_field_name }}"
+      value="{{ widget.floorplan_page_url.value }}"
+    />
+  </div>
+  <input type="submit" value="Save" class="btn" />
+</form>

@@ -1,0 +1,15 @@
+<form>
+  <div class="form-field">
+    {{ widget.unit_ownership_id.id_hidden_field }}
+    <label for="{{ widget.unit_ownership_id.value_field_id }}" >
+      Unit Ownership ID
+    </label>
+    <input type="text"
+      id="{{ widget.unit_ownership_id.value_field_id }}"
+      name="{{ widget.unit_ownership_id.value_field_name }}"
+      value="{{ widget.unit_ownership_id.value }}"
+    />
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+</form>

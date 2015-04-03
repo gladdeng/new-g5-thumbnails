@@ -1,0 +1,21 @@
+.comarketing .canvas {
+  height: 0;
+  padding-bottom: 75%;
+  padding-top: 30px;
+  width: 100%;
+  position: relative;
+}
+
+/*google map bootstrap fix*/
+.comarketing .canvas img {
+  max-width: none;
+}
+.comarketing .canvas label {
+  width: auto;
+  display: inline;
+}
+
+.hide-navigation [role=banner] .navigation,
+.hide-navigation .action-calls {
+  display:none;
+}

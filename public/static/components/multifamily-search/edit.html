@@ -1,0 +1,299 @@
+<form>
+  <div class="form-field">
+    {{ widget.core_client_id.id_hidden_field }}
+    <label for="{{ widget.core_client_id.value_field_id }}">
+      Core Client ID
+    </label>
+    <input type="text"
+      placeholder="1234"
+      id="{{ widget.core_client_id.value_field_id }}"
+      name="{{ widget.core_client_id.value_field_name }}"
+      value="{{ widget.core_client_id.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.core_service_url.id_hidden_field }}
+    <label for="{{ widget.core_service_url.value_field_id }}">
+      Core Service URL
+    </label>
+    <input type="text"
+      placeholder="//www.g5search.com"
+      id="{{ widget.core_service_url.value_field_id }}"
+      name="{{ widget.core_service_url.value_field_name }}"
+      value="{{ widget.core_service_url.best_value }}"
+    />
+  </div>
+  <div class="form-field check-field">
+    {{ widget.orion_single_domain.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.orion_single_domain.value_field_id }}_false"
+      name="{{ widget.orion_single_domain.value_field_name }}"
+      value="no"
+    />
+    <input type="checkbox"
+      id="{{ widget.orion_single_domain.value_field_id }}"
+      name="{{ widget.orion_single_domain.value_field_name }}"
+      value="true"
+      {% if widget.orion_single_domain.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.orion_single_domain.value_field_id }}" >
+      Single Domain Url
+    </label>
+  </div>
+  <div class="form-field">
+    {{ widget.per_page.id_hidden_field }}
+    <label for="{{ widget.per_page.value_field_id }}">
+      Pagination Per Page
+    </label>
+    <input type="text"
+      placeholder="20"
+      id="{{ widget.per_page.value_field_id }}"
+      name="{{ widget.per_page.value_field_name }}"
+      value="{{ widget.per_page.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.available_threshold.id_hidden_field }}
+    <label for="{{ widget.available_threshold.value_field_id }}" >
+      Available Threshold
+    </label>
+    <input type="text"
+      placeholder="1"
+      id="{{ widget.available_threshold.value_field_id }}"
+      name="{{ widget.available_threshold.value_field_name }}"
+      value="{{ widget.available_threshold.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_available_text_threshold.id_hidden_field }}
+    <label for="{{ widget.cta_available_text_threshold.value_field_id }}" >
+      Cta Available Text Threshold
+    </label>
+    <input type="text"
+      placeholder="5"
+      id="{{ widget.cta_available_text_threshold.value_field_id }}"
+      name="{{ widget.cta_available_text_threshold.value_field_name }}"
+      value="{{ widget.cta_available_text_threshold.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_limited_text_threshold.id_hidden_field }}
+    <label for="{{ widget.cta_limited_text_threshold.value_field_id }}" >
+      Cta Limited Text Threshold
+    </label>
+    <input type="text"
+      placeholder="2"
+      id="{{ widget.cta_limited_text_threshold.value_field_id }}"
+      name="{{ widget.cta_limited_text_threshold.value_field_name }}"
+      value="{{ widget.cta_limited_text_threshold.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.heading_text.id_hidden_field }}
+    <label for="{{ widget.heading_text.value_field_id }}" >
+      Heading Text
+    </label>
+    <input type="text"
+      placeholder="Find an Apartment"
+      id="{{ widget.heading_text.value_field_id }}"
+      name="{{ widget.heading_text.value_field_name }}"
+      value="{{ widget.heading_text.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_available_text.id_hidden_field }}
+    <label for="{{ widget.cta_available_text.value_field_id }}" >
+      Cta Available Text
+    </label>
+    <input type="text"
+      placeholder="Available | View Units"
+      id="{{ widget.cta_available_text.value_field_id }}"
+      name="{{ widget.cta_available_text.value_field_name }}"
+      value="{{ widget.cta_available_text.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_limited_text.id_hidden_field }}
+    <label for="{{ widget.cta_limited_text.value_field_id }}" >
+      Cta Limited Text
+    </label>
+    <input type="text"
+      placeholder="Limited Availability | Visit Site"
+      id="{{ widget.cta_limited_text.value_field_id }}"
+      name="{{ widget.cta_limited_text.value_field_name }}"
+      value="{{ widget.cta_limited_text.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_low_text.id_hidden_field }}
+    <label for="{{ widget.cta_low_text.value_field_id }}" >
+      Cta Low Text
+    </label>
+    <input type="text"
+      placeholder="Low Availability | Visit Site"
+      id="{{ widget.cta_low_text.value_field_id }}"
+      name="{{ widget.cta_low_text.value_field_name }}"
+      value="{{ widget.cta_low_text.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.text_color.id_hidden_field }}
+    <label for="{{ widget.text_color.value_field_id }}">
+      Text Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.text_color.value_field_id }}"
+      name="{{ widget.text_color.value_field_name }}"
+      value="{{ widget.text_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.search_button_color.id_hidden_field }}
+    <label for="{{ widget.search_button_color.value_field_id }}">
+      Search Button Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.search_button_color.value_field_id }}"
+      name="{{ widget.search_button_color.value_field_name }}"
+      value="{{ widget.search_button_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.photo_border_color.id_hidden_field }}
+    <label for="{{ widget.photo_border_color.value_field_id }}">
+      Photo Border Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.photo_border_color.value_field_id }}"
+      name="{{ widget.photo_border_color.value_field_name }}"
+      value="{{ widget.photo_border_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.card_background_color.id_hidden_field }}
+    <label for="{{ widget.card_background_color.value_field_id }}">
+      Card Background Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.card_background_color.value_field_id }}"
+      name="{{ widget.card_background_color.value_field_name }}"
+      value="{{ widget.card_background_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.card_text_color.id_hidden_field }}
+    <label for="{{ widget.card_text_color.value_field_id }}">
+      Card Text Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.card_text_color.value_field_id }}"
+      name="{{ widget.card_text_color.value_field_name }}"
+      value="{{ widget.card_text_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.unit_info_border.id_hidden_field }}
+    <label for="{{ widget.unit_info_border.value_field_id }}">
+      Unit Info Border
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.unit_info_border.value_field_id }}"
+      name="{{ widget.unit_info_border.value_field_name }}"
+      value="{{ widget.unit_info_border.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_color.id_hidden_field }}
+    <label for="{{ widget.cta_color.value_field_id }}">
+      Cta Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.cta_color.value_field_id }}"
+      name="{{ widget.cta_color.value_field_name }}"
+      value="{{ widget.cta_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.cta_text_color.id_hidden_field }}
+    <label for="{{ widget.cta_text_color.value_field_id }}">
+      Cta Text Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.cta_text_color.value_field_id }}"
+      name="{{ widget.cta_text_color.value_field_name }}"
+      value="{{ widget.cta_text_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.header_text_color.id_hidden_field }}
+    <label for="{{ widget.header_text_color.value_field_id }}">
+      Header Text Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.header_text_color.value_field_id }}"
+      name="{{ widget.header_text_color.value_field_name }}"
+      value="{{ widget.header_text_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.search_color.id_hidden_field }}
+    <label for="{{ widget.search_color.value_field_id }}">
+      Search Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.search_color.value_field_id }}"
+      name="{{ widget.search_color.value_field_name }}"
+      value="{{ widget.search_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.dropdown_color.id_hidden_field }}
+    <label for="{{ widget.dropdown_color.value_field_id }}">
+      Dropdown Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.dropdown_color.value_field_id }}"
+      name="{{ widget.dropdown_color.value_field_name }}"
+      value="{{ widget.dropdown_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.dropdown_text_color.id_hidden_field }}
+    <label for="{{ widget.dropdown_text_color.value_field_id }}">
+      Dropdown Text Color
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.dropdown_text_color.value_field_id }}"
+      name="{{ widget.dropdown_text_color.value_field_name }}"
+      value="{{ widget.dropdown_text_color.best_value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.search_background.id_hidden_field }}
+    <label for="{{ widget.search_background.value_field_id }}">
+      Search Background
+    </label>
+    <input type="text"
+      placeholder=""
+      id="{{ widget.search_background.value_field_id }}"
+      name="{{ widget.search_background.value_field_name }}"
+      value="{{ widget.search_background.best_value }}"
+    />
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+</form>

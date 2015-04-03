@@ -1,0 +1,100 @@
+<div class="gallery widget">
+
+  <script class="config" type="application/json">
+    {
+      "show_thumbnails": "{{ widget.gallery_thumbnails.value }}",
+      "mini_gallery": "{{ widget.gallery_mini.value }}",
+      "carousel": "{{ widget.gallery_carousel.value }}"
+    }
+  </script>
+
+  {% if widget.gallery_title.value != blank %}
+    <h2>{{ widget.gallery_title.value }}</h2>
+  {% endif %}
+
+  <div class="flexslider-container">
+    <div class = "flexslider {% if widget.gallery_carousel.value == 'yes'%}gallery-carousel{% else %}gallery-slideshow{% endif %} {% if widget.gallery_mini.value == 'yes' %}mini-gallery{% else %}full-gallery{% endif %}">
+      <ul class="slides">
+        {% if widget.gallery_photo1_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo1_thumb_url.value != blank %}{{ widget.gallery_photo1_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo1_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo1_url.value | url_encode}}" alt="{{ widget.gallery_photo1_alt_tag.value }}" />{% if widget.gallery_photo1_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo1_title.value }}</p>{% endif %}{% if widget.gallery_photo1_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo1_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo2_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo2_thumb_url.value != blank %}{{ widget.gallery_photo2_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo2_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo2_url.value | url_encode}}" alt="{{ widget.gallery_photo2_alt_tag.value }}" />{% if widget.gallery_photo2_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo2_title.value }}</p>{% endif %}{% if widget.gallery_photo2_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo2_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo3_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo3_thumb_url.value != blank %}{{ widget.gallery_photo3_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo3_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo3_url.value | url_encode}}" alt="{{ widget.gallery_photo3_alt_tag.value }}" />{% if widget.gallery_photo3_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo3_title.value }}</p>{% endif %}{% if widget.gallery_photo3_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo3_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo4_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo4_thumb_url.value != blank %}{{ widget.gallery_photo4_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo4_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo4_url.value | url_encode}}" alt="{{ widget.gallery_photo4_alt_tag.value }}" />{% if widget.gallery_photo4_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo4_title.value }}</p>{% endif %}{% if widget.gallery_photo4_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo4_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo5_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo5_thumb_url.value != blank %}{{ widget.gallery_photo5_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo5_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo5_url.value | url_encode}}" alt="{{ widget.gallery_photo5_alt_tag.value }}" />{% if widget.gallery_photo5_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo5_title.value }}</p>{% endif %}{% if widget.gallery_photo5_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo5_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo6_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo6_thumb_url.value != blank %}{{ widget.gallery_photo6_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo6_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo6_url.value | url_encode}}" alt="{{ widget.gallery_photo6_alt_tag.value }}" />{% if widget.gallery_photo6_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo6_title.value }}</p>{% endif %}{% if widget.gallery_photo6_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo6_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo7_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo7_thumb_url.value != blank %}{{ widget.gallery_photo7_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo7_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo7_url.value | url_encode}}" alt="{{ widget.gallery_photo7_alt_tag.value }}" />{% if widget.gallery_photo7_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo7_title.value }}</p>{% endif %}{% if widget.gallery_photo7_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo7_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo8_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo8_thumb_url.value != blank %}{{ widget.gallery_photo8_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo8_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo8_url.value | url_encode}}" alt="{{ widget.gallery_photo8_alt_tag.value }}" />{% if widget.gallery_photo8_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo8_title.value }}</p>{% endif %}{% if widget.gallery_photo8_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo8_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo9_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo9_thumb_url.value != blank %}{{ widget.gallery_photo9_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo9_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo9_url.value | url_encode}}" alt="{{ widget.gallery_photo9_alt_tag.value }}" />{% if widget.gallery_photo9_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo9_title.value }}</p>{% endif %}{% if widget.gallery_photo9_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo9_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo10_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo10_thumb_url.value != blank %}{{ widget.gallery_photo10_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo10_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo10_url.value | url_encode}}" alt="{{ widget.gallery_photo10_alt_tag.value }}" />{% if widget.gallery_photo10_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo10_title.value }}</p>{% endif %}{% if widget.gallery_photo10_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo10_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo11_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo11_thumb_url.value != blank %}{{ widget.gallery_photo11_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo11_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo11_url.value | url_encode}}" alt="{{ widget.gallery_photo11_alt_tag.value }}" />{% if widget.gallery_photo11_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo11_title.value }}</p>{% endif %}{% if widget.gallery_photo11_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo11_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo12_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo12_thumb_url.value != blank %}{{ widget.gallery_photo12_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo12_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo12_url.value | url_encode}}" alt="{{ widget.gallery_photo12_alt_tag.value }}" />{% if widget.gallery_photo12_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo12_title.value }}</p>{% endif %}{% if widget.gallery_photo12_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo12_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo13_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo13_thumb_url.value != blank %}{{ widget.gallery_photo13_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo13_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo13_url.value | url_encode}}" alt="{{ widget.gallery_photo13_alt_tag.value }}" />{% if widget.gallery_photo13_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo13_title.value }}</p>{% endif %}{% if widget.gallery_photo13_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo13_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo14_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo14_thumb_url.value != blank %}{{ widget.gallery_photo14_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo14_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo14_url.value | url_encode}}" alt="{{ widget.gallery_photo14_alt_tag.value }}" />{% if widget.gallery_photo14_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo14_title.value }}</p>{% endif %}{% if widget.gallery_photo14_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo14_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo15_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo15_thumb_url.value != blank %}{{ widget.gallery_photo15_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo15_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo15_url.value | url_encode}}" alt="{{ widget.gallery_photo15_alt_tag.value }}" />{% if widget.gallery_photo15_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo15_title.value }}</p>{% endif %}{% if widget.gallery_photo15_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo15_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo16_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo16_thumb_url.value != blank %}{{ widget.gallery_photo16_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo16_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo16_url.value | url_encode}}" alt="{{ widget.gallery_photo16_alt_tag.value }}" />{% if widget.gallery_photo16_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo16_title.value }}</p>{% endif %}{% if widget.gallery_photo16_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo16_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo17_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo17_thumb_url.value != blank %}{{ widget.gallery_photo17_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo17_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo17_url.value | url_encode}}" alt="{{ widget.gallery_photo17_alt_tag.value }}" />{% if widget.gallery_photo17_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo17_title.value }}</p>{% endif %}{% if widget.gallery_photo17_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo17_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo18_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo18_thumb_url.value != blank %}{{ widget.gallery_photo18_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo18_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo18_url.value | url_encode}}" alt="{{ widget.gallery_photo18_alt_tag.value }}" />{% if widget.gallery_photo18_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo18_title.value }}</p>{% endif %}{% if widget.gallery_photo18_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo18_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo19_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo19_thumb_url.value != blank %}{{ widget.gallery_photo19_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo19_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo19_url.value | url_encode}}" alt="{{ widget.gallery_photo19_alt_tag.value }}" />{% if widget.gallery_photo19_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo19_title.value }}</p>{% endif %}{% if widget.gallery_photo19_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo19_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+
+        {% if widget.gallery_photo20_url.value != blank %}
+        <li data-thumb="{% if widget.gallery_photo20_thumb_url.value != blank %}{{ widget.gallery_photo20_thumb_url.value | url_encode}}{% else %}{{ widget.gallery_photo20_url.value | url_encode}}{% endif %}"><img src="{{ widget.gallery_photo20_url.value | url_encode}}" alt="{{ widget.gallery_photo20_alt_tag.value }}" />{% if widget.gallery_photo20_title.value != blank %}<p class="flex-title">{{ widget.gallery_photo20_title.value }}</p>{% endif %}{% if widget.gallery_photo20_caption.value != blank %}<p class="flex-caption">{{ widget.gallery_photo20_caption.value }}</p>{% endif %}</li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div> <!-- end .content -->

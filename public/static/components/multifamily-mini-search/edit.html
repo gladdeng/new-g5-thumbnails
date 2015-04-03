@@ -1,0 +1,162 @@
+<form>
+  <fieldset>
+
+    <div class="form-field">
+      {{ widget.core_client_id.id_hidden_field }}
+      <label for="{{ widget.core_client_id.value_field_id }}">
+        Core Client ID
+      </label>
+      <input type="text"
+        placeholder="1234"
+        id="{{ widget.core_client_id.value_field_id }}"
+        name="{{ widget.core_client_id.value_field_name }}"
+        value="{{ widget.core_client_id.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.corp_search_page.id_hidden_field }}
+      <label for="{{ widget.corp_search_page.value_field_id }}">
+        Corp Search Page Path
+      </label>
+      <input type="text"
+        placeholder="/relative/path/to/search_page"
+        id="{{ widget.corp_search_page.value_field_id }}"
+        name="{{ widget.corp_search_page.value_field_name }}"
+        value="{{ widget.corp_search_page.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.core_service_url.id_hidden_field }}
+      <label for="{{ widget.core_service_url.value_field_id }}">
+        Core API Domain
+      </label>
+      <input type="text"
+        placeholder="//www.g5search.com"
+        id="{{ widget.core_service_url.value_field_id }}"
+        name="{{ widget.core_service_url.value_field_name }}"
+        value="{{ widget.core_service_url.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.heading_text.id_hidden_field }}
+      <label for="{{ widget.heading_text.value_field_id }}">
+        Heading Text
+      </label>
+      <input type="text"
+        placeholder="h2 Text"
+        id="{{ widget.heading_text.value_field_id }}"
+        name="{{ widget.heading_text.value_field_name }}"
+        value="{{ widget.heading_text.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.alternate_core_client_id.id_hidden_field }}
+      <label for="{{ widget.alternate_core_client_id.value_field_id }}">
+        Alternate Core Client ID
+      </label>
+      <input type="text"
+        placeholder="1234"
+        id="{{ widget.alternate_core_client_id.value_field_id }}"
+        name="{{ widget.alternate_core_client_id.value_field_name }}"
+        value="{{ widget.alternate_core_client_id.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.external_search_url.id_hidden_field }}
+      <label for="{{ widget.external_search_url.value_field_id }}">
+        Alternate Search Page Path
+      </label>
+      <input type="text"
+        placeholder="/relative/path/to/alternate_search_page"
+        id="{{ widget.external_search_url.value_field_id }}"
+        name="{{ widget.external_search_url.value_field_name }}"
+        value="{{ widget.external_search_url.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.default_search_option.id_hidden_field }}
+      <label for="{{ widget.default_search_option.value_field_id }}">
+        Default Search Option
+      </label>
+      <input type="text"
+        placeholder="Apartments, perhaps"
+        id="{{ widget.default_search_option.value_field_id }}"
+        name="{{ widget.default_search_option.value_field_name }}"
+        value="{{ widget.default_search_option.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.alternate_search_option.id_hidden_field }}
+      <label for="{{ widget.alternate_search_option.value_field_id }}">
+        Alternate Search Option
+      </label>
+      <input type="text"
+        placeholder="Commercial, perhaps"
+        id="{{ widget.alternate_search_option.value_field_id }}"
+        name="{{ widget.alternate_search_option.value_field_name }}"
+        value="{{ widget.alternate_search_option.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.alternate_search_button_text.id_hidden_field }}
+      <label for="{{ widget.alternate_search_button_text.value_field_id }}">
+        Alternate Search Button Text
+      </label>
+      <input type="text"
+        placeholder=""
+        id="{{ widget.alternate_search_button_text.value_field_id }}"
+        name="{{ widget.alternate_search_button_text.value_field_name }}"
+        value="{{ widget.alternate_search_button_text.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.text_color.id_hidden_field }}
+      <label for="{{ widget.text_color.value_field_id }}">
+        Text Color
+      </label>
+      <input type="text"
+        placeholder=""
+        id="{{ widget.text_color.value_field_id }}"
+        name="{{ widget.text_color.value_field_name }}"
+        value="{{ widget.text_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.search_button_color.id_hidden_field }}
+      <label for="{{ widget.search_button_color.value_field_id }}">
+        Search Button Color
+      </label>
+      <input type="text"
+        placeholder=""
+        id="{{ widget.search_button_color.value_field_id }}"
+        name="{{ widget.search_button_color.value_field_name }}"
+        value="{{ widget.search_button_color.value }}"
+      />
+    </div>
+
+    <div class="form-field">
+      {{ widget.search_background.id_hidden_field }}
+      <label for="{{ widget.search_background.value_field_id }}">
+        Search Background
+      </label>
+      <input type="text"
+        placeholder=""
+        id="{{ widget.search_background.value_field_id }}"
+        name="{{ widget.search_background.value_field_name }}"
+        value="{{ widget.search_background.value }}"
+      />
+    </div>
+
+  </fieldset>
+  <input type="submit" value="Save" class="btn" />
+</form>

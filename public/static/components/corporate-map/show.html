@@ -1,0 +1,123 @@
+<div class="corporate-map widget">
+  <script class="config" type="application/javascript">
+      var initCorpMap = function() {
+        var corpMapSettings = {
+          "hoverColor": {{ widget.corporate_map.best_value.hover_color }},
+          "selectedColor": {{ widget.corporate_map.best_value.primary_color }},
+          "selectedRegions": {{ widget.corporate_map.best_value.populated_states }},
+          "locationCounts": {{ widget.corporate_map.best_value.state_location_counts }},
+          "corpSearchPage": "{{ widget.corp_search_page.value }}",
+          "corpSearchPageAlt": "{{ widget.corp_search_page_alt.value }}",
+          "coreClientId": NaN,
+          "coreClientIdAlt": NaN,
+          "stateDataToggle": ("{{ widget.state_data_toggle.value }}".toLowerCase() === "true") ? true : false
+        }
+
+        {% unless widget.core_client_id.value == blank %}
+          corpMapSettings.coreClientId = {{ widget.core_client_id.value }};
+        {% endunless %}
+        
+        {% unless widget.core_client_id_alt.value == blank %}
+          corpMapSettings.coreClientIdAlt = {{ widget.core_client_id_alt.value }};
+        {% endunless %}
+
+
+        var corpMapConfig = {
+          "map": "usa_en",
+          "borderColor": "#FFFFFF",
+          "color": "#d6d6d6",
+          "borderWidth": 2,
+          "hoverColor": corpMapSettings.hoverColor,
+          "selectedColor": corpMapSettings.selectedColor,
+          "selectedRegions": corpMapSettings.selectedRegions,
+          "locationCounts": corpMapSettings.locationCounts,
+          "onRegionClick": function(element, code, region) {
+            $(this).find('.selected').css('fill', corpMapSettings.selectedColor);
+            var match = $.inArray(code.toUpperCase(), corpMapConfig.selectedRegions) > -1;
+            if (match) {
+              window.location.href = "/" + code.toLowerCase();
+            }
+          }
+        };
+
+        var corpConfigClone = jQuery.extend(true, {}, corpMapConfig);
+        corpConfigClone.onRegionClick = function(element, code, region) {
+          $(this).find('.selected').css('fill', corpConfigClone.selectedColor);
+          var match = $.inArray(code.toUpperCase(), corpConfigClone.selectedRegions) > -1;
+          if (match) {
+            window.location.href = "/" + code.toLowerCase();
+          }
+        }
+
+        if (("ontouchstart" in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+          corpMapConfig.showTooltip = false;
+          corpConfigClone.showTooltip = false;
+        };
+
+        var corpSearchPage = corpMapSettings.corpSearchPage.trim().length > 0;
+        var coreClientId = !isNaN(corpMapSettings.coreClientId);
+        var coreClientIdAlt = !isNaN(corpMapSettings.coreClientIdAlt);
+        var coreApiCall = function(storeId, mapSetting, urlPath, init){
+          var apiUrl = "//www.g5api.com/api/v0/client_locations?client_id=" + storeId;
+          $.ajax({url: apiUrl, dataType: 'json', success: function(data){formatData(data, mapSetting, urlPath, init)}});
+        };
+
+        var formatData = function(data, mapSetting, urlPath, init){
+          var hash = {};
+          data.states.forEach(function(item){ 
+            hash[item.name] = item.location_count;
+          });
+          mapSetting.selectedRegions = data.states.map(function(item){return item.name;});
+          mapSetting.locationCounts = hash;
+          mapSetting.onRegionClick = function(element, code, region) {
+            $(this).find('.selected').css('fill', corpMapSettings.selectedColor);
+            var match = $.inArray(code.toUpperCase(), mapSetting.selectedRegions) > -1;
+            if (match) {
+              window.location.href = "/" + urlPath + "?state=" + code.toUpperCase();
+            };
+          };
+
+          if (init){
+            init();
+          }
+        };
+
+        if(coreClientId && corpSearchPage) {
+          if (!corpMapSettings.stateDataToggle) {
+            coreApiCall(corpMapSettings.coreClientId, corpMapConfig, corpMapSettings.corpSearchPage, function(){
+              $('#corporate-map').vectorMap(corpMapConfig);
+            });
+          } else {
+            coreApiCall(corpMapSettings.coreClientId, corpMapConfig, corpMapSettings.corpSearchPage, function(){
+              $('#corporate-map').vectorMap(corpMapConfig);
+            });
+
+            if (coreClientIdAlt && corpMapSettings.corpSearchPageAlt != "") {
+              coreApiCall(corpMapSettings.coreClientIdAlt, corpConfigClone, corpMapSettings.corpSearchPageAlt, function(){
+                return
+              });
+            }
+            $('.corporate-map .map-tabs a.locations').addClass("active");
+            $('.corporate-map .map-tabs a').on('click', function(e){
+              $('#corporate-map').replaceWith("<div id='corporate-map'></div>");
+              $('.corporate-map .map-tabs a').removeClass("active");
+              $(this).addClass('active');
+              $('#corporate-map').vectorMap(eval($(this).data('map-config')));
+              e.preventDefault();
+            });
+          }
+        } else {
+          $('#corporate-map').vectorMap(corpMapConfig);
+        }
+      };
+  </script>
+
+  {% assign state_toggles = widget.state_data_toggle.value | downcase %}
+  {% if state_toggles == "true" %}
+    <div class="map-tabs">
+      <a href="#" data-map-config="corpMapConfig" class="locations">Multi-Family</a>
+      <a href="#" data-map-config="corpConfigClone" class="commercial">Commercial</a>
+    </div>
+  {% endif %}
+  <div id="corporate-map"></div>
+</div>

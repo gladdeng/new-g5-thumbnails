@@ -1,0 +1,225 @@
+/* FILTER STYLES =============================*/
+.filters:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.filter-btn {
+  display: inline-block;
+}
+.filter-name {
+  margin-right: .25em;
+}
+.available-filter {
+  text-align: right;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 1em 0;
+}
+.available-filter input {
+  display: inline;
+  margin-right: .5em;
+  vertical-align: .1em;
+}
+@media (min-width: 768px) {
+  .filter {
+    float: left;
+    margin-right: 2%;
+  }
+  .filter-name {
+    margin-right: .5em;
+  }
+}
+@media (min-width: 980px) {
+  .available-filter {
+    font-size: 18px;
+  }
+}
+
+
+/* SELECT FLOORPLAN STYLES =========================*/
+.floorplans {
+  margin-bottom: 2em;
+}
+.floorplan-btn {
+  overflow: hidden;
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  background: #f0f0f0;
+  background: -webkit-linear-gradient(#fff, #f0f0f0);
+  background: -moz-linear-gradient(#fff, #f0f0f0);
+  background: -ms-linear-gradient(#fff, #f0f0f0);
+  background: -o-linear-gradient(#fff, #f0f0f0);
+  background: linear-gradient(#fff, #f0f0f0);
+  text-decoration: none;
+}
+.floorplans ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.floorplan-box {
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
+  position: relative;
+}
+.floorplan-container {
+  padding: .625em 10px;
+}
+.floorplan-container.selected {
+  background: #f0f0f0;
+  background: -webkit-linear-gradient(#fff, #f0f0f0);
+  background: -moz-linear-gradient(#fff, #f0f0f0);
+  background: -ms-linear-gradient(#fff, #f0f0f0);
+  background: -o-linear-gradient(#fff, #f0f0f0);
+  background: linear-gradient(#fff, #f0f0f0);
+}
+.floorplans a {
+  color: #504e4e;
+}
+.floorplans h2 {
+  font-size: 24px;
+}
+.floorplans h3 {
+  font-size: 20px;
+}
+.floorplan {
+  position: relative;
+  border-top: 1px solid #ccc;
+  padding: .625em 10px;
+}
+.floorplan:after {
+  content: "";
+  display: table;
+  clear:both;
+}
+li.floorplan:first-child {
+  border-top: none;
+}
+li.floorplan:nth-child(even) {
+  background: #efeded;
+}
+.floorplan-heading {
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.floorplan-heading p {
+  float: left;
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #504e4e;
+}
+.choose-floorplan {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5em 1em;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+}
+.choose-floorplan span {
+  display: block;
+}
+.choose-floorplan .soon {
+  border-top: 1px solid #cbcbcb;
+  padding-top: .2em;
+  margin-top: .2em;
+}
+.selected .choose-floorplan {
+  display: none;
+}
+.floorplan-info {
+  position: relative;
+  min-height: 50px;
+}
+.floorplan-info div {
+  min-height: 1px;
+}
+.floorplan-info p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+.floorplan-img {
+  float: left;
+  margin-right: 2%;
+  width: 13%;
+}
+.floorplan-img .floorplan-btn {
+  padding: 2px;
+  display: block;
+}
+.floorplan-img img {
+  display: block;
+  margin: 0 auto;
+}
+.floorplan .floorplan-beds,
+.floorplan .floorplan-size {
+  margin-left: 17%;
+  width: 35%;
+}
+
+@media (max-width: 979px) {
+  .floorplan-rent {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+  }
+  .floorplan-beds p {
+    display: inline-block;
+  }
+  .floorplan-beds p:first-child:after {
+    padding-left: .5em;
+    content: '/';
+  }
+}
+@media (min-width: 768px) {
+  .floorplan-heading {
+    margin-bottom: 0;
+  }
+  .floorplan-heading p {
+    font-size: 20px;
+  }
+  .choose-floorplan {
+    width: auto;
+  }
+  .floorplan-info p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 980px) {
+  .floorplans h2 {
+    font-size: 36px;
+  }
+  .choose-floorplan {
+    position: absolute;
+    right: 10px;
+    top: 2em;
+    z-index: 1;
+  }
+  .floorplan .floorplan-beds,
+  .floorplan .floorplan-size,
+  .floorplan .floorplan-rent {
+    float: left;
+    margin-left: 0;
+    width: 20%;
+  }
+}
+
+#loading-floorplans {
+  margin: 200px auto;
+  text-align: center;
+  width: 200px;
+}
+#loading-floorplans .loader {
+  background: url(https://widgets.g5dxm.com/shared/loader.gif) center no-repeat;
+  height: 32px;
+  margin: 0 auto 1em;
+  width: 32px;
+}
+.filters .filter .disabled {
+  cursor: default;
+}

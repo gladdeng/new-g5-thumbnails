@@ -1,0 +1,55 @@
+<form>
+
+  <div class="form-field">
+    {{ widget.google_plus_id.id_hidden_field }}
+    <label for="{{ widget.google_plus_id.value_field_id }}" >
+      Google+ ID
+    </label>
+    <input type="text"
+      id="{{ widget.google_plus_id.value_field_id }}"
+      name="{{ widget.google_plus_id.value_field_name }}"
+      value="{{ widget.google_plus_id.value }}"
+      placeholder="example: 127502257237874861202"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.google_site_verification.id_hidden_field }}
+    <label for="{{ widget.google_site_verification.value_field_id }}" >
+      Google Webmaster Tools Verification
+    </label>
+    <input type="text"
+      id="{{ widget.google_site_verification.value_field_id }}"
+      name="{{ widget.google_site_verification.value_field_name }}"
+      value="{{ widget.google_site_verification.value }}"
+      placeholder="example: 2RLLE31ZpZnKPYa8z8xra1Mj05Za0yHWtb0-ZqTyBtg"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.optimizely_id.id_hidden_field }}
+    <label for="{{ widget.optimizely_id.value_field_id }}" >
+      Optimizely ID
+    </label>
+    <input type="text"
+      id="{{ widget.optimizely_id.value_field_id }}"
+      name="{{ widget.optimizely_id.value_field_name }}"
+      value="{{ widget.optimizely_id.value }}"
+      placeholder="example: 9864173"
+    />
+  </div>
+  <div class="form-field">
+      {{ widget.favicon.id_hidden_field }}
+      <label for="{{ widget.favicon.value_field_id }}">
+          Favicon
+      </label>
+      <input type="text"
+             id="{{ widget.favicon.value_field_id }}"
+             name="{{ widget.favicon.value_field_name }}"
+             value="{{ widget.favicon.best_value }}"
+             placeholder="http://favicon_url/icon.ico"
+              />
+  </div>
+
+  <input type="submit" value="Save" />
+</form>

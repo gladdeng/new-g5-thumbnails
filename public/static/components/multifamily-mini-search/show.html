@@ -1,0 +1,60 @@
+<script id="mf-mini-search-config" type="application/json">
+  {
+    "clientID": "{{ widget.core_client_id.value }}",
+    "serviceURL": "{{ widget.core_service_url.value }}",
+    "corpSearchPage": "{{ widget.corp_search_page.value }}",
+    "externalSearchURL": "{{ widget.external_search_url.value }}",
+    "defaultSearchOption": "{{ widget.default_search_option.value }}",
+    "alternateSearchOption": "{{ widget.alternate_search_option.value }}",
+    "alternateSearchButtonText": "{{ widget.alternate_search_button_text.value }}",
+    "alternateCoreClientID": "{{ widget.alternate_core_client_id.value }}"
+  }
+</script>
+
+<style>
+  {% if widget.text_color.value != '' %}
+  .corpSearchWrapper {color:{{widget.text_color.value}}}
+  {% endif %}
+  {% if widget.search_button_color.value != '' %}
+  .corpSearchWrapper .search-form .search-button{background:{{widget.search_button_color.value}}}
+  {% endif %}
+  {% if widget.search_background.value != '' %}
+  .corpSearchWrapper .search-form{background:{{widget.search_background.value}}}
+  {% endif %}
+</style>
+
+<div class="corporate-search widget">
+  <div id="corp-search-container">
+    <div id="corpSearchWrapper" class="corpSearchWrapper">
+      <div class="search-form">
+        <div class="search-form-center">
+          <div class="search-form-inner">
+            <div class="multifamily-mini-search">
+              <h2>{{ widget.heading_text.value }}</h2>
+              <span class="state">
+                <select class="mf-search-states default-select">
+                  <option value="">State</option>
+                </select>
+                <select class="mf-search-states alternate-select">
+                  <option value="">State</option>
+                </select>
+              </span>
+              <span class="city">
+                <select class="mf-search-cities default-select">
+                  <option value="">City</option>
+                </select>
+                <select class="mf-search-cities alternate-select">
+                  <option value="">City</option>
+                </select>
+              </span>
+              <span class="search-button">
+                <button class="mf-search-go-button search default-submit-button">Search</button>
+                <button class="mf-search-go-button search alternate-submit-button">{{ widget.alternate_search_button_text.value }}</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

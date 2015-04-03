@@ -1,0 +1,69 @@
+<div class="service-request-form widget g5-enhanced-form">
+
+  <script class="config" type="application/json">
+    {
+      "clientUrn": "{{ widget.client_urn.value }}"
+    }
+  </script>
+
+  {% if widget.form_title.value != "" %}
+    <h2 class="form-heading">{{ widget.form_title.value}}</h2>
+  {% endif %}
+
+  <form id="form-template" class="form h-entry" action="{{ widget.cls_url.value | url_encode }}html_forms" method="POST">
+    {% if widget.form_note.value != "" %}
+      <p class="form-note">{{ widget.form_note.value }}</p>
+    {% endif %}
+
+    <input type="hidden" class="u-uid" name="u-uid" value="{{ widget.form_uid.value | url_encode }}" />
+    <input type="hidden" class="u-syndication" name="u-syndication" value="{{ widget.form_syndication_url.value | url_encode }}" />
+
+    <div class="p-author h-card">
+      <div class="form-field">
+        <label for="p-name" class="required">Resident Name</label>
+        <input type="text" id="p-name" class="p-name" name="p-name" required />
+      </div>
+
+      <div class="form-field">
+        <label for="u-email" class="required">Email</label>
+        <input type="email" id="u-email" class="u-email" name="u-email" required />
+      </div>
+
+      <div class="form-field">
+        <label for="p-tel">Phone Number</label>
+        <input type="tel" id="p-tel" class="p-tel" name="p-tel" />
+      </div>
+
+      <div class="form-field">
+        <label for="p-adr">Apartment Number</label>
+        <input type="text" id="p-adr" class="p-adr" name="p-adr" />
+      </div>
+
+    </div>
+
+    <div class="form-field">
+      <label for="dt-published" class="required">Date preferred</label>
+      <input type="date" id="dt-published" class="dt-published" name="dt-published" required />
+    </div>
+
+    <div class="form-field" class="required">
+      <label for="e-content">Provide Details</label>
+      <textarea id="e-content" class="e-content" name="e-content" required></textarea>
+    </div>
+
+    <div class="form-field">
+      <label class="required"><input type="checkbox" id="p-g5-permission" class="p-g5-permission" name="p-g5-permission" checked> Permission is granted to enter my home</label>
+    </div>
+
+    <!-- for bots only. inline js/css necessary to make sure this is always hidden -->
+    <input id="lead_comments" name="lead_comments" onfocus="this.blur();" style="margin-left: -9999px; float: left;" type="text" value="" />
+
+    <input type="submit" value="Send" />
+    <span class="form-instruction">* Required Field</span>
+  </form>
+
+  <div class="submitting" style="display: none">Your submission is being sent...</div>
+  <div class="error" style="display: none">We're sorry, but something went wrong.</div>
+  <div class="success" style="display: none">Thank you! Your information was successfully sent.</div>
+
+</div>

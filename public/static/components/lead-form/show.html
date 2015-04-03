@@ -1,0 +1,18 @@
+{% if widget.form_note.value != blank %}
+  <p class="form-note">{{ widget.form_note.value }}</p>
+{% endif %}
+
+<div class="widget g5-enhanced-form">
+  <script class="config" type="application/json">
+    {
+      {% if widget.success_redirect_url.value != blank %}
+        "successRedirectUrl": "{{ widget.success_redirect_url.value}}",
+      {% endif %}
+      "formUrl": "{{ widget.cls_url }}api/v1/locations/{{ widget.location_urn.value }}/html_forms/{{ widget.form_type.value }}"
+    }
+  </script>
+
+  <p>
+    You have either disabled Javascript or are using an older, unsupported browser. Please <a href="{{ widget.secure_cls_url }}api/v1/locations/{{ widget.location_urn.value }}/html_forms/{{ widget.form_type.value }}.html" target="_blank">visit this link</a> to contact us.
+  </p>
+</div>

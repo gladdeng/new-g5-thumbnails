@@ -1,0 +1,70 @@
+<form>
+  <div class="form-field">
+    {{ widget.core_client_id.id_hidden_field }}
+    <label for="{{ widget.core_client_id.value_field_id }}" >
+      Core Client Id (to use core data) required for map toggle
+    </label>
+      <input type="text"
+             placeholder=""
+             id="{{ widget.core_client_id.value_field_id }}"
+             name="{{ widget.core_client_id.value_field_name }}"
+             value="{{ widget.core_client_id.value }}"
+             />
+  </div>
+
+  <div class="form-field">
+    {{ widget.corp_search_page.id_hidden_field }}
+    <label for="{{ widget.corp_search_page.value_field_id }}" >
+      Corp Search Page
+    </label>
+      <input type="text"
+             placeholder="apartment-search/"
+             id="{{ widget.corp_search_page.value_field_id }}"
+             name="{{ widget.corp_search_page.value_field_name }}"
+             value="{{ widget.corp_search_page.value }}"
+             />
+  </div>
+
+  <div class="form-field check-field">
+    {{ widget.state_data_toggle.id_hidden_field }}
+    <input type="checkbox"
+      id="{{ widget.state_data_toggle.value_field_id }}"
+      name="{{ widget.state_data_toggle.value_field_name }}"
+      value="true"
+      {% if widget.state_data_toggle.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.state_data_toggle.value_field_id }}" >
+      Dual Maps?
+    </label>
+  </div>
+
+  <div class="form-field">
+    {{ widget.core_client_id_alt.id_hidden_field }}
+    <label for="{{ widget.core_client_id_alt.value_field_id }}" >
+      Core Client Id 2 (to use core data)
+    </label>
+      <input type="text"
+             placeholder=""
+             id="{{ widget.core_client_id_alt.value_field_id }}"
+             name="{{ widget.core_client_id_alt.value_field_name }}"
+             value="{{ widget.core_client_id_alt.value }}"
+             />
+  </div>
+
+  <div class="form-field">
+    {{ widget.corp_search_page_alt.id_hidden_field }}
+    <label for="{{ widget.corp_search_page_alt.value_field_id }}" >
+      Corp Search Page (Commercial)
+    </label>
+      <input type="text"
+             placeholder="apartment-search/"
+             id="{{ widget.corp_search_page_alt.value_field_id }}"
+             name="{{ widget.corp_search_page_alt.value_field_name }}"
+             value="{{ widget.corp_search_page_alt.value }}"
+             />
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+</form>

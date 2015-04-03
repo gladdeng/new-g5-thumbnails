@@ -1,0 +1,16 @@
+<form>
+  <div class="form-field">
+    {{ widget.typekit_filename.id_hidden_field }}
+    <label for="{{ widget.typekit_filename.value_field_id }}" >
+      Typekit File Name <span class="form-note">(javascript file from kit editor)</span>
+    </label>
+    <input type="text"
+      id="{{ widget.typekit_filename.value_field_id }}"
+      name="{{ widget.typekit_filename.value_field_name }}"
+      value="{{ widget.typekit_filename.value }}"
+      placeholder="xxxxxx"
+    />
+  </div>
+
+  <input type="submit" value="Save" />
+</form>

@@ -1,0 +1,153 @@
+<form>
+  <div class="form-field">
+    {{ widget.lead_form_url.id_hidden_field }}
+    <label for="{{ widget.lead_form_url.value_field_id }}">
+      Lead Form URL
+    </label>
+    <input type="text"
+      placeholder="//path.to.my.leads.service"
+      id="{{ widget.lead_form_url.value_field_id }}"
+      name="{{ widget.lead_form_url.value_field_name }}"
+      value="{{ widget.lead_form_url.value | url_encode }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.core_store_id.id_hidden_field }}
+    <label for="{{ widget.core_store_id.value_field_id }}">
+      Core Store ID
+    </label>
+    <input type="text"
+      placeholder="1234"
+      id="{{ widget.core_store_id.value_field_id }}"
+      name="{{ widget.core_store_id.value_field_name }}"
+      value="{{ widget.core_store_id.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.floorplans_service_host.id_hidden_field }}
+    <label for="{{ widget.floorplans_service_host.value_field_id }}">
+      Floorplans Service Host
+    </label>
+    <input type="text"
+      placeholder="//www.mydomain.com"
+      id="{{ widget.floorplans_service_host.value_field_id }}"
+      name="{{ widget.floorplans_service_host.value_field_name }}"
+      value="{{ widget.floorplans_service_host.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.max_unit_availability.id_hidden_field }}
+    <label for="{{ widget.max_unit_availability.value_field_id }}">
+      Max Unit Availability
+    </label>
+    <input type="text"
+      placeholder="6"
+      id="{{ widget.max_unit_availability.value_field_id }}"
+      name="{{ widget.max_unit_availability.value_field_name }}"
+      value="{{ widget.max_unit_availability.value }}"
+    />
+  </div>
+  <div class="form-field check-field">
+    {{ widget.lease_terms.id_hidden_field }}
+    <input type="hidden"
+      id="{{ widget.lease_terms.value_field_id }}_false"
+      name="{{ widget.lease_terms.value_field_name }}"
+      value="no"
+    />
+    <input type="checkbox"
+      id="{{ widget.lease_terms.value_field_id }}"
+      name="{{ widget.lease_terms.value_field_name }}"
+      value="true"
+      {% if widget.lease_terms.value == "true" %}
+      checked="checked"
+      {% endif %}
+    />
+    <label for="{{ widget.lease_terms.value_field_id }}" >
+      Lease Terms 
+    </label>
+  </div>
+  <div class="form-field">
+    <label for="{{ widget.success_redirect_url.value_field_id }}" >
+      Successful Submission Redirect URL
+    </label>
+    {{ widget.success_redirect_url.id_hidden_field }}
+    <input type="text"
+      id="{{ widget.success_redirect_url.value_field_id }}"
+      name="{{ widget.success_redirect_url.value_field_name }}"
+      value="{{ widget.success_redirect_url.value | url_encode }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.primary_color.id_hidden_field }}
+    <label for="{{ widget.primary_color.value_field_id }}">
+      Primary Color
+    </label>
+    <input type="text"
+      placeholder="#252b32"
+      id="{{ widget.primary_color.value_field_id }}"
+      name="{{ widget.primary_color.value_field_name }}"
+      value="{{ widget.primary_color.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.secondary_color.id_hidden_field }}
+    <label for="{{ widget.secondary_color.value_field_id }}">
+      Secondary Color
+    </label>
+    <input type="text"
+      placeholder="#005892"
+      id="{{ widget.secondary_color.value_field_id }}"
+      name="{{ widget.secondary_color.value_field_name }}"
+      value="{{ widget.secondary_color.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.accent_color_1.id_hidden_field }}
+    <label for="{{ widget.accent_color_1.value_field_id }}">
+      Accent Color 1
+    </label>
+    <input type="text"
+      placeholder="#fe7b6f"
+      id="{{ widget.accent_color_1.value_field_id }}"
+      name="{{ widget.accent_color_1.value_field_name }}"
+      value="{{ widget.accent_color_1.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.accent_color_2.id_hidden_field }}
+    <label for="{{ widget.accent_color_2.value_field_id }}">
+      Accent Color 2
+    </label>
+    <input type="text"
+      placeholder="#526173"
+      id="{{ widget.accent_color_2.value_field_id }}"
+      name="{{ widget.accent_color_2.value_field_name }}"
+      value="{{ widget.accent_color_2.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.text_color_dark.id_hidden_field }}
+    <label for="{{ widget.text_color_dark.value_field_id }}">
+      Text Color Dark
+    </label>
+    <input type="text"
+      placeholder="#000000"
+      id="{{ widget.text_color_dark.value_field_id }}"
+      name="{{ widget.text_color_dark.value_field_name }}"
+      value="{{ widget.text_color_dark.value }}"
+    />
+  </div>
+  <div class="form-field">
+    {{ widget.nav_text_color.id_hidden_field }}
+    <label for="{{ widget.nav_text_color.value_field_id }}">
+      Nav Text Color
+    </label>
+    <input type="text"
+      placeholder="#000000"
+      id="{{ widget.nav_text_color.value_field_id }}"
+      name="{{ widget.nav_text_color.value_field_name }}"
+      value="{{ widget.nav_text_color.value }}"
+    />
+  </div>
+  <input type="submit" value="Save" class="btn" />
+</form>

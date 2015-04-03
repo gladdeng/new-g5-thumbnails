@@ -1,0 +1,27 @@
+{% if widget.full_review_content.value == "true" %}
+
+  <script class="promoted-reviews-config full-review-config" type="application/json">
+    {
+      "branded_name": "{{ widget.branded_name.value }}",
+      "review_api_url": "{{ widget.review_api_url.value | url_encode }}",
+      "review_page_url": "{{ widget.review_page_url.value | url_encode }}",
+      "insert_review_schema": "{{ widget.insert_review_schema.value }}",
+      "full_review_content": "{{ widget.full_review_content.value }}"
+    }
+  </script>
+
+  <div id="promoted-reviews" class="promoted-reviews widget"></div>
+
+{% else %}
+
+  <script class="promoted-reviews-config hcard-review-config" type="application/json">
+    {
+      "branded_name": "{{ widget.branded_name.value }}",
+      "review_api_url": "{{ widget.review_api_url.value | url_encode }}",
+      "review_page_url": "{{ widget.review_page_url.value | url_encode }}",
+      "insert_review_schema": "{{ widget.insert_review_schema.value }}",
+      "full_review_content": "{{ widget.full_review_content.value }}"
+    }
+  </script>
+
+{% endif %}

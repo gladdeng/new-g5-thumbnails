@@ -1,0 +1,126 @@
+<form action="{{ widget.form_action.value | url_encode }}" class="h-entry">
+
+  <div class="form-field">
+    {{ widget.client_urn.id_hidden_field }}
+    <label for="{{ widget.client_urn.value_field_id }}" >
+      Client URN
+    </label>
+    <input type="text"
+      id="{{ widget.client_urn.value_field_id }}"
+      name="{{ widget.client_urn.value_field_name }}"
+      value="{{ widget.client_urn.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.location_urn.id_hidden_field }}
+    <label for="{{ widget.location_urn.value_field_id }}" >
+      Location URN
+    </label>
+    <input type="text"
+      id="{{ widget.location_urn.value_field_id }}"
+      name="{{ widget.location_urn.value_field_name }}"
+      value="{{ widget.location_urn.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.phone_number.id_hidden_field }}
+    <label for="{{ widget.phone_number.value_field_id }}" >
+      Phone Number
+    </label>
+    <input type="tel"
+      id="{{ widget.phone_number.value_field_id }}"
+      name="{{ widget.phone_number.value_field_name }}"
+      value="{{ widget.phone_number.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.contact_url.id_hidden_field }}
+    <label for="{{ widget.contact_url.value_field_id }}" >
+      Contact Page URL
+    </label>
+    <input type="text"
+      id="{{ widget.contact_url.value_field_id }}"
+      name="{{ widget.contact_url.value_field_name }}"
+      value="{{ widget.contact_url.value | url_encode }}"
+    />
+  </div>
+
+  <div class="form-field">
+    {{ widget.third_party_chat_code.id_hidden_field }}
+    <label for="{{ widget.third_party_chat_code.value_field_id }}" >
+      3rd Party Chat HTML
+    </label>
+    <textarea
+      id="{{ widget.third_party_chat_code.value_field_id }}"
+      name="{{ widget.third_party_chat_code.value_field_name }}"
+     >
+      {{ widget.third_party_chat_code.value }}
+    </textarea>
+  </div>
+
+  <div class="form-field">
+    <label for="{{ widget.third_party_chat_url.value_field_id }}" >
+      3rd Party Chat URL
+    </label>
+    {{ widget.third_party_chat_url.id_hidden_field }}
+    <input type="text"
+      id="{{ widget.third_party_chat_url.value_field_id }}"
+      name="{{ widget.third_party_chat_url.value_field_name }}"
+      value="{{ widget.third_party_chat_url.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="{{ widget.chat_width.value_field_id }}" >
+      3rd Party Chat Window Width
+    </label>
+    {{ widget.chat_width.id_hidden_field }}
+    <input type="text"
+      id="{{ widget.chat_width.value_field_id }}"
+      name="{{ widget.chat_width.value_field_name }}"
+      value="{{ widget.chat_width.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="{{ widget.chat_height.value_field_id }}" >
+      3rd Party Chat Window Height
+    </label>
+    {{ widget.chat_height.id_hidden_field }}
+    <input type="text"
+      id="{{ widget.chat_height.value_field_id }}"
+      name="{{ widget.chat_height.value_field_name }}"
+      value="{{ widget.chat_height.value }}"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="{{ widget.success_redirect_url.value_field_id }}" >
+      Successful Submission Redirect URL
+    </label>
+    {{ widget.success_redirect_url.id_hidden_field }}
+    <input type="url"
+      id="{{ widget.success_redirect_url.value_field_id }}"
+      name="{{ widget.success_redirect_url.value_field_name }}"
+      value="{{ widget.success_redirect_url.value | url_encode }}"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="{{ widget.fade_delay.value_field_id }}" >
+      Fade Delay in Seconds
+    </label>
+    {{ widget.fade_delay.id_hidden_field }}
+    <input type="number"
+      id="{{ widget.fade_delay.value_field_id }}"
+      name="{{ widget.fade_delay.value_field_name }}"
+      value="{{ widget.fade_delay.value }}"
+    />
+  </div>
+
+  <input type="submit" value="Save" class="btn" />
+  
+</form>

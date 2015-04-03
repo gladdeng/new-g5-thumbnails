@@ -1,0 +1,49 @@
+<!--[if IE 9]><script type="text/javascript">var noStickyNavForIE9 = true;</script><![endif]-->
+<div class="contact-info-sheet widget hidden">
+
+  <script class="config" type="application/json">
+    {
+      "cpnsUrl": "{{ widget.secure_cpns_url }}",
+      "locationUrn": "{{ widget.location_urn.value }}",
+      "fadeDelay":"{{ widget.fade_delay.value }}",
+      "third_party_chat":"{{widget.third_party_chat_url.value}}",
+      "chat_width":"{{widget.chat_width.value}}",
+      "chat_height":"{{widget.chat_height.value}}"
+      {% if widget.third_party_chat_code.value != blank %}
+      ,"third_party_url":true
+      {% endif %}
+    }
+  </script>
+
+  <div class="info-sheet-nav">
+    <!-- use phone service for this number -->
+    <a class="number info-sheet-phone-btn info-sheet-toggle" href="tel://{{ widget.phone_number.value }}"><span class="p-tel">{{ widget.phone_number.value }}</span></a>
+    <a class="info-sheet-email-btn info-sheet-toggle" href="{{ widget.contact_url.value | url_encode }}">Email</a>
+    {% if widget.third_party_chat_code.value != blank %}
+      <span class="info-sheet-chat-btn info-sheet-icon chat-code">{{widget.third_party_chat_code.value}}</span>
+    {% endif %}
+    <div class="info-sheet-page-up info-sheet-pagination">UP</div>
+    <div class="info-sheet-page-down info-sheet-pagination">DOWN</div>
+  </div> <!-- end .info-sheet-nav -->
+
+  <div class="info-sheet-content">
+    <div class="info-sheet-phone p-tel">{{ widget.phone_number.value }}</div> <!-- end .info-sheet-phone -->
+    <div class="info-sheet-email">
+
+      <div class="g5-enhanced-form">
+        <script class="config" type="application/json">
+          {
+            {% if widget.success_redirect_url.value != '' %}
+              "successRedirectUrl": "{{ widget.success_redirect_url.value}}",
+            {% endif %}
+            "formUrl": "{{ widget.cls_url }}api/v1/locations/{{ widget.location_urn.value }}/html_forms/contact"
+          }
+        </script>
+
+        <p>
+          You are using an older, unsupported browser. Please <a href="{{ widget.secure_cls_url }}api/v1/locations/{{ widget.location_urn.value }}/html_forms/contact.html" target="_blank">visit this link</a> to contact us.
+        </p>
+      </div> <!-- end form -->
+    </div> <!-- end .info-sheet-email -->
+  </div> <!-- end .info-sheet-content -->
+</div> <!-- end .contact-info-sheet -->

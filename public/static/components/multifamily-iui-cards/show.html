@@ -1,0 +1,82 @@
+<div class="multifamily-iui-cards widget">
+  <script>
+    var EmberAppConfig = {  
+      "modulePrefix":"multi-family-iui-cards",
+      "environment":"production",
+      "baseURL":"/",
+      "locationType":"auto",
+      "EmberENV":{
+        "FEATURES":{},
+        "PER_PAGE":20
+      },
+      "APP":{
+        "rootElement":"#iui-container",
+        "serviceHost":"{{ widget.floorplans_service_host.value | url_encode }}",
+        'storeId': '{{ widget.core_store_id.value }}',
+        'leadFormUrl': '{{ widget.lead_form_url.value | url_encode }}',
+        'floorplansServiceHost': "{{ widget.floorplans_service_host.value | url_encode }}",
+        'maxUnitAvailability': "{{ widget.max_unit_availability.value }}",
+        'enableLeaseTerms': "{{ widget.lease_terms.value }}",
+        'successRedirectUrl':"{{widget.success_redirect_url.value}}"
+      },
+      "exportApplicationGlobal":false
+    }
+
+    var mfMetaConfig = document.createElement('meta');
+        mfMetaConfig.id="ember-meta";
+        mfMetaConfig.name = "multi-family-iui-cards/config/environment";
+        mfMetaConfig.content = JSON.stringify(EmberAppConfig);
+    document.getElementsByTagName('head')[0].appendChild(mfMetaConfig);
+
+    // IE9 fix
+    if(!window.console)var console={log:function(){},warn:function(){},error:function(){},time:function(){},timeEnd:function(){}};
+  </script>
+
+  <style>
+    /* Primary color customizations */
+    #iui-cards-wrapper .iui-cards-unit-categories .category-card-title,
+    #iui-cards-wrapper .floorplan-card .floorplan-card-title,
+    #iui-cards-wrapper .unit-numbers{ background:{{widget.primary_color.value}}; }
+
+    /* Secondary color customizations */
+    #iui-cards-wrapper .iui-cards-unit-categories a.iui-cards-view-all,
+    #iui-cards-wrapper .iui-cards-unit-categories a.iui-cards-view-all:hover,
+    #iui-cards-wrapper .floorplan-card a.floorplan-card-cta,
+    #iui-cards-wrapper .unit-cta a{ background-color:{{widget.secondary_color.value}}; }
+
+    /* Accent-Color-1 color customizations */
+    #iui-cards-wrapper .iui-cards-nav a.active,
+    #iui-cards-wrapper .iui-cards-unit-categories a:hover,
+    #iui-cards-wrapper .floorplan-card a.floorplan-card-cta:hover,
+    #iui-cards-wrapper .iui-cards-unit-categories a:hover .category-card-title,
+    #iui-cards-wrapper .iui-cards-floorplan-details form input[type=submit]{ background:{{widget.accent_color_1.value}}; }
+    #iui-cards-wrapper .iui-cards-pagination div span.disabled a,
+    #iui-cards-wrapper .floorplan-card a.floorplan-image div{ background-color:{{widget.accent_color_1.value}}; }
+
+    /* Accent-Color-2 color customizations */
+    #iui-cards-wrapper .iui-cards-nav div{ border-top: 1px solid {{widget.accent_color_2.value}}; }
+
+    #iui-cards-wrapper .iui-cards-nav a,
+    #iui-cards-wrapper.medium .iui-cards-floorplan-details,
+    #iui-cards-wrapper.narrow .iui-cards-floorplan-details,
+    #iui-cards-wrapper .floorplan-card .unit-baths span,
+    #iui-cards-wrapper .floorplan-card .unit-beds span{ background: {{widget.accent_color_2.value}}; }
+
+    #iui-cards-wrapper .floorplan-card a.floorplan-image svg line{ stroke:{{widget.accent_color_2.value}}; }
+    #iui-cards-wrapper .floorplan-card a.floorplan-image svg circle{ fill:{{widget.accent_color_2.value}}; }
+
+    #iui-cards-wrapper .floorplan-card a.floorplan-image span,
+    #iui-cards-wrapper .iui-cards-pagination div span a,
+    #iui-cards-wrapper .filter-select select{background-color:{{widget.accent_color_2.value}};}
+
+    #iui-cards-wrapper .iui-cards-floorplan-details{
+      background-image: linear-gradient(to right, transparent, transparent 299px, {{widget.accent_color_2.value}} 299px);
+    }
+
+    /* Text Colors */
+    #iui-cards-wrapper .floorplan-card{ color:{{widget.text_color_dark.value}}; }
+    #iui-cards-wrapper .iui-cards-nav a.active span{ color:{{widget.nav_text_color.value}}; }
+  </style>
+
+  <div id="iui-container"></div>
+</div>

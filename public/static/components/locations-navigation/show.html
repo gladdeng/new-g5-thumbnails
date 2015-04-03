@@ -1,0 +1,20 @@
+<nav class="locations-navigation widget">
+  <dl>
+    {% for state_grouping in widget.locations_navigation.value %}
+      <dt>
+        {{ state_grouping[0] }}
+      </dt>
+      <dd>
+        <ul>
+        {% for location in state_grouping[1] %}
+          <li>
+            <a href="{{ location[1] | url_encode }}">
+              {{ location[0] }}
+            </a>
+          </li>
+        {% endfor %}
+        </ul>
+      </dd>
+    {% endfor %}
+  </dl>
+</nav>
